@@ -1,8 +1,8 @@
 extern crate scanner_rust;
-use scanner_rust::Scanner;
 use scanner_rust::generic_array::typenum::U64;
+use scanner_rust::Scanner;
 
-pub fn run(){
+pub fn run() {
     println!("Assignment 3\n");
 
     println!("Josh Johnson\n");
@@ -27,21 +27,23 @@ pub fn run(){
     //println!("{arr:?}");
     let mut count = 0;
     for i in 0..arr.len() {
-        if i % 10 == 0 {print!("\n");}
+        if i % 10 == 0 {
+            print!("\n");
+        }
         let append: char;
-        if arr[i] > μ{
+        if arr[i] > μ {
             append = '>';
             count += 1;
-        }
-        else if arr[i] == μ {
+        } else if arr[i] == μ {
             append = '=';
-        }
-        else{
+        } else {
             append = '<';
         }
         print!("{:<5.2} {append}  ", arr[i])
-
     }
     println!("\n\nThere are {count} values greater than the mean: {μ:.3}");
-    println!("There are {} values less than or equal to the mean: {μ:.3}", 1000 - count);
+    println!(
+        "There are {} values less than or equal to the mean: {μ:.3}",
+        1000 - count
+    );
 }

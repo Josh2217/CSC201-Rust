@@ -1,6 +1,6 @@
 use std::io;
 
-pub fn run(){
+pub fn run() {
     println!("Assignment 2\n");
     println!("Josh Johnson");
     let stdin = io::stdin();
@@ -11,7 +11,9 @@ pub fn run(){
         println!("Please enter Integer #{}", i + 1);
 
         str_input = String::new();
-        stdin.read_line(&mut str_input).expect("Error Reading Input");
+        stdin
+            .read_line(&mut str_input)
+            .expect("Error Reading Input");
 
         //chop off the newline character
         str_input = String::from(str_input.trim());
@@ -36,11 +38,12 @@ pub fn run(){
     }
     let avg: f64 = (sum as f64) / 3.;
 
-    println!("Average of {arr:?} is {avg:.3}\nSum of {arr:?} is {sum}\nProduct of {arr:?} is {prod}\n");
+    println!(
+        "Average of {arr:?} is {avg:.3}\nSum of {arr:?} is {sum}\nProduct of {arr:?} is {prod}\n"
+    );
     if arr[0] > arr[1] {
         println!("#1 is greater than #2");
-    }
-    else {
+    } else {
         println!("#2 is less than or equal to #1");
     }
 
@@ -50,8 +53,7 @@ pub fn run(){
 
     if (arr[0] & arr[1] & arr[2]) == 1 {
         println!("how odd\n");
-    }
-    else {
+    } else {
         println!("lucky duck\n");
     }
 
